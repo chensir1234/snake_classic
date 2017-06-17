@@ -13,6 +13,10 @@ import java.util.Properties;
  * @author zzf
  *@date 2017年6月17日 下午2:03:30
  */
+/**
+ * @author zzf
+ *@date 2017年6月17日 下午4:56:25
+ */
 public class ValueAdvance {
 	private final String str1;
 	/**

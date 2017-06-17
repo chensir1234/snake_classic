@@ -6,15 +6,19 @@ package com.breaver.test.tcs0617;
 import java.awt.CardLayout;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
+//import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import com.breaver.formal.config.ConstantsTCS;
+import com.breaver.formal.jpanel.JPanelGame;
 
 /**
  * @author zzf
@@ -24,7 +28,7 @@ public class UserInterface extends JFrame {
 
 	private ConstantsTCS constantsTCS = new ConstantsTCS();
 	private JPanel jPanelFirst = new JPanel();
-	private JPanel jPanelGame = new JPanel();
+	private JPanelGame jPanelGame = new JPanelGame();
 	private JPanel jPanelMenu = new JPanel();
 	private JPanel jPanelOthers = new JPanel();
 	private JPanel jPanelHelp = new JPanel();
@@ -40,6 +44,7 @@ public class UserInterface extends JFrame {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		UserInterface interface1 = new UserInterface();
+		
 	}
 
 	public UserInterface() throws HeadlessException {
@@ -70,12 +75,12 @@ public class UserInterface extends JFrame {
 		button2.addActionListener(event -> {
 			cardLayout1.show(jPanelFirst, "others");
 		});
-		jPanelGame.add(new JLabel("game"));
+		/*jPanelGame.add(new JLabel("game"));
 		JButton button3 = new JButton("返回主菜单");
 		jPanelGame.add(button3);
 		button3.addActionListener(event->{
 			cardLayout1.show(jPanelFirst, "menu");
-		});
+		});*/
 		/*jPanelOthers.add(new JLabel("其他功能"));
 		JButton button4 = new JButton("返回");
 		button4.addActionListener(event->{
@@ -116,8 +121,116 @@ public class UserInterface extends JFrame {
 		JTextField field = new JTextField(20);
 		jPanelHelp.add(field);
 //		jPanelHelp  = new JPanel();
-		
-//		jPanelGame
+		//对游戏窗口响应
+		jPanelGame.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("你-按下---："+e.getKeyCode());
+			}
+		});
+		//----test--key----pressed-----
+		this.getContentPane().addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("JFrame的子一");
+			}
+		});
+		jPanelFirst.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("menu的父级");
+			}
+		});
+		jPanelOthers.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("help的父级");
+			}
+		});
+		jPanelHelp.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("你-按下---："+e.getKeyCode());
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+		jPanelSetUp.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				super.keyPressed(e);
+				System.out.println("你-按下---："+e.getKeyCode());
+			}
+		});
 		// 下面显示窗口-------------------------
 		this.setVisible(true);
 	}
