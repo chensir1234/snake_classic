@@ -44,7 +44,7 @@ public class ButtonBack extends JButton {
 //		super.paintComponent(g);
 		graphics2d = (Graphics2D)g;
 		if(getModel().isArmed()){
-			graphics2d.setColor(Color.black);
+			graphics2d.setColor(Color.RED);
 		}
 		else{
 			graphics2d.setColor(getBackground());
