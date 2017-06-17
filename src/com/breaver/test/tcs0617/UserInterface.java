@@ -143,6 +143,27 @@ public class UserInterface extends JFrame {
 			}
 		});
 		//----test--key----pressed-----
+		this.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("´°Ìå¼¶----key");
+				
+			}
+		});
 		this.getContentPane().addKeyListener(new KeyListener() {
 			
 			@Override

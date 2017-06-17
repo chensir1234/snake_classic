@@ -23,7 +23,8 @@ public class ConstantsTCS {
 	// ====================================
 	private Properties properties = null;
 	private InputStream inputStream = null;
-
+	//主要目的是程序运行期间只读取一次----配置
+	private final static ConstantsTCS demoUnique = new ConstantsTCS();
 	// private Iterator<String> iterator = null;
 	/**
 	 * @param args
@@ -32,6 +33,13 @@ public class ConstantsTCS {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	/**
+	 * @return the demoUnique
+	 */
+	public static ConstantsTCS getDemoUnique() {
+		return demoUnique;
 	}
 
 	public ConstantsTCS() {
